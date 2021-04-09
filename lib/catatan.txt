@@ -1,0 +1,71 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(modul_1());
+}
+List hari = [
+  "Selasa",
+  "Rabu",
+  "Kamis",
+  "Jumat",
+];
+class modul_1 extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: new ThemeData(
+        fontFamily: 'Mulish',
+        scaffoldBackgroundColor: const Color(0xFFF5F6F8),
+        primaryColor: Colors.deepOrange,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 75,
+          backgroundColor: Color(0xFFFF5B16),
+          title: Text('Jadwal Praktikum'),
+        ),
+        body: ListView.builder(
+            padding: EdgeInsets.all(4.0),
+            itemCount: hari.length,
+            itemBuilder: (BuildContext context, i) {
+              return Container(
+                  child: Column(
+                children: <Widget>[
+                  Container(
+                      margin: EdgeInsets.only(
+                          left: 10, top: 20, right: 5, bottom: 0),
+                      height: 50,
+                      color: Color(0xFFFF5B16),
+                      child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 10.0, bottom: 10.0, left: 25.0),
+                          child: Row(
+                            children: <Widget>[
+                              Text(hari[i],
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400)),
+                            ],
+                          ))),
+                ],
+              ));
+            }),
+        floatingActionButton: new FloatingActionButton(
+
+          child: new Icon(
+            Icons.add,
+            color: Colors.black,
+            size: 40,
+          ),
+          backgroundColor: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+
+
+
